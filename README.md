@@ -1,72 +1,30 @@
-# A Precision Medicine Framework for Cerebrovascular Disease: Lessons learned from a study of diagnostic accuracy
+# A Precision Medicine Framework for Cerebrovascular Disease: Lessons Learned from a Study of Diagnostic Accuracy
 
-This repository contains the code and relevant resources for the research study "A precision medicine framework for cerebrovascular disease: Lessons learned from a study of diagnostic accuracy." Our goal was to design and validate a predictive model aimed at improving the diagnosis and treatment of cerebrovascular diseases, using a precision medicine approach.
+This repository contains the code for a study entitled "A Precision Medicine Framework for Cerebrovascular Disease: Lessons Learned from a Study of Diagnostic Accuracy". 
 
-## Project Overview
+A link to the manuscript of our study will be provided after publication. 
 
-This research study aims to increase diagnostic accuracy for cerebrovascular diseases, leading to improved patient outcomes. Utilizing machine learning and a wealth of data sources, we have developed a framework for precision medicine. The framework enables the integration of diverse data, including genetic information, clinical phenotypes, and various biomarkers, which increases the precision of diagnosis and subsequently, the effectiveness of treatment strategies.
+## Project Outline
 
-## Repository Structure
+The main focus of this study is the quantitative validation of a simulation-based precision medicine framework developed by our group, specifically designed for the evaluation of cerebral hemodynamics in patients suffering from Intracranial Arterial Disease (ICAD). The validation is based on comparison with Dynamic Susceptibility Contrast Magnetic Resonance Imaging (DSC-MRI).
 
-```
-.
-├── data
-│   ├── processed
-│   └── raw
-├── docs
-├── models
-├── notebooks
-├── scripts
-├── LICENSE
-└── README.md
-```
+The simulation framework [manuscript] can be accessed here: (https://biomedical-engineering-online.biomedcentral.com/articles/10.1186/s12938-021-00880-w)
 
-- `data/`: This directory contains all the data used in this study. It is further divided into raw and processed subdirectories, which contain the original data and the cleaned/processed data, respectively.
-- `docs/`: This directory contains the documentation related to this study, including the project proposal, methodological approaches, and other related documents.
-- `models/`: This directory contains the machine learning models developed and used in this study.
-- `notebooks/`: This directory contains Jupyter notebooks used for exploratory data analysis, model development, evaluation, and other exploratory tasks.
-- `scripts/`: This directory contains scripts for data preprocessing, model training, model evaluation, and other tasks.
+## Repository Contents
 
-## Getting Started
+The repository comprises two files that are instrumental in the analysis and interpretation of the study data:
 
-To get a local copy up and running, follow these steps:
+1. `nipype_pypeline.py`: This file contains a post-processing pipeline that aids in the evaluation of the relative Mean Transit Time (relMTT) using DSC-MRI. The pipeline is designed using Nipype, an open-source project that provides a uniform interface to existing neuroimaging software.
 
-1. Clone the repo
-   ```sh
-   git clone https://github.com/your_username_/Project-Name.git
-   ```
-2. Install required packages
-   ```sh
-   pip install -r requirements.txt
-   ```
-3. Run the main script
-   ```sh
-   python main.py
-   ```
+2. `statistics.py`: This file includes the analysis of diagnostic accuracy which involves the calculation of sensitivity, specificity, and the Receiver Operating Characteristic (ROC) analysis incl. ROC curve figures.
 
-## Documentation
+## Data accessability
 
-For more detailed information about the methods used in this study and instructions on how to use the code, please refer to the `docs/` directory.
-
-## Authors
-
-- Your Name
-- Collaborator Name
-
-## Acknowledgements
-
-We would like to express our deepest appreciation to all those who provided us the possibility to complete this project.
-
-## License
-
-This project is licensed under the MIT License - see the `LICENSE` file for details.
+The data used in this study is not openly available due to data privacy regulations. Access can be granted for qualified scientific requests. 
 
 ## Contact
 
-Your Name - email@example.com
+If you have any queries regarding the project, feel free to reach out jonas.behland@charite.de
 
-Project Link: [https://github.com/your_username_/Project-Name](https://github.com/your_username_/Project-Name)
+Your contributions, suggestions, and feedback are most welcome. Feel free to open an issue or submit a pull request.
 
----
-
-**Please note**: The data used in this project are simulated and do not represent real patient data. This repository is meant for educational and illustrative purposes only.
