@@ -1,5 +1,4 @@
-# claim_icad_simulation_vs_perfusion
-# A Precision Medicine Framework for Cerebrovascular Disease
+# A Precision Medicine Framework for Cerebrovascular Disease: Lessons learned from a study of diagnostic accuracy
 
 This repository contains the code and relevant resources for the research study "A precision medicine framework for cerebrovascular disease: Lessons learned from a study of diagnostic accuracy." Our goal was to design and validate a predictive model aimed at improving the diagnosis and treatment of cerebrovascular diseases, using a precision medicine approach.
 
