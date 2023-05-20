@@ -8,7 +8,7 @@ A link to the manuscript of our study will be provided after publication.
 
 The main focus of this study is the quantitative validation of a simulation-based precision medicine framework developed by our group, specifically designed for the evaluation of cerebral hemodynamics in patients suffering from Intracranial Arterial Disease (ICAD). The validation is based on comparison with Dynamic Susceptibility Contrast Magnetic Resonance Imaging (DSC-MRI).
 
-The simulation framework [manuscript] can be accessed here: (https://biomedical-engineering-online.biomedcentral.com/articles/10.1186/s12938-021-00880-w)
+The simulation framework manuscript can be accessed here: (https://biomedical-engineering-online.biomedcentral.com/articles/10.1186/s12938-021-00880-w)
 
 ## Repository Contents
 
