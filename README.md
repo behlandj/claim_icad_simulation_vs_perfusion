@@ -24,7 +24,7 @@ The data used in this study is not openly available due to data privacy regulati
 
 ## Contact
 
-If you have any queries regarding the project, feel free to reach out jonas.behland@charite.de
+If you have any queries regarding the project, feel free to reach out to jonas.behland(at)charite.de
 
 Your contributions, suggestions, and feedback are most welcome. Feel free to open an issue or submit a pull request.
 
