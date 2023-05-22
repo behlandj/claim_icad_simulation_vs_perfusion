@@ -14,7 +14,7 @@ The simulation framework manuscript can be accessed here: (https://biomedical-en
 
 The repository comprises two files that are instrumental in the analysis and interpretation of the study data:
 
-1. `nipype_pypeline.py`: This file contains a post-processing pipeline that aids in the evaluation of the relative Mean Transit Time (relMTT) using DSC-MRI. The pipeline is designed using Nipype, an open-source project that provides a uniform interface to existing neuroimaging software.
+1. `nipype_pypeline.py`: This file contains a post-processing pipeline that aids in the evaluation of the relative Mean Transit Time (relMTT) using DSC-MRI. The pipeline can also process perfusion maps of TTP, CBV, CBF, Tmax. The pipeline is designed using Nipype, an open-source project that provides a uniform interface to existing neuroimaging software.
 
 2. `statistics.py`: This file includes the analysis of diagnostic accuracy which involves the calculation of sensitivity, specificity, and the Receiver Operating Characteristic (ROC) analysis incl. ROC curve figures.
 
