@@ -18,10 +18,6 @@ The repository comprises two files that are instrumental in the analysis and int
 
 2. `statistics.py`: This file includes the analysis of diagnostic accuracy which involves the calculation of sensitivity, specificity, and the Receiver Operating Characteristic (ROC) analysis incl. ROC curve figures.
 
-## Data accessability
-
-The data used in this study is not openly available due to data privacy regulations. Access can be granted for qualified scientific requests. 
-
 ## Repository Data Structure
 
 Here's a snapshot of the project data structure needed for nipype_pipeline.py:
@@ -100,6 +96,9 @@ ACA) territory.
 
 - **Masken_cut/PCA_ipsi_mask.nii.gz**: This mask represents the ipsilateral Posterior Cerebral Artery (PCA) territory.
 
+## Data accessability
+
+The data used in this study is not openly available due to data privacy regulations. Access can be granted for qualified scientific requests. 
 
 ## Contact
 
