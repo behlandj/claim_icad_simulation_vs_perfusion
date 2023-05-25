@@ -22,7 +22,7 @@ The repository comprises two files that are instrumental in the analysis and int
 
 The data used in this study is not openly available due to data privacy regulations. Access can be granted for qualified scientific requests. 
 
-# Repository Data Structure
+## Repository Data Structure
 
 Here's a snapshot of the project data structure needed for nipype_pipeline.py:
 
