@@ -18,9 +18,9 @@ The repository comprises two files that are instrumental in the analysis and int
 
 2. `statistics.py`: This file includes the analysis of diagnostic accuracy which involves the calculation of sensitivity, specificity, and the Receiver Operating Characteristic (ROC) analysis incl. ROC curve figures.
 
-## Repository Data Structure
+## Repository Data Structure of nipype_pipeline.py
 
-Here's a snapshot of the project data structure needed for nipype_pipeline.py:
+Here's a snapshot of the project data structure needed for nipype_pipeline.py. All files need to be provided in NIfTI format and gzipped. 
 
 ```
 Repository
@@ -54,29 +54,30 @@ Repository
 ...
 ```
 
-## Data Files Descriptions
+### Data Files Descriptions
 
-- **MPRAGE.nii.gz**: This file contains Magnetization Prepared Rapid Gradient Echo (MPRAGE) data, used for high-resolution T1-weighted brain imaging.
+- **MPRAGE.nii.gz**: This file contains Magnetization Prepared Rapid Gradient Echo (MPRAGE) data, used as anatomical reference.
 
-- **DSC_Source.nii.gz**: This is the source file for Dynamic Susceptibility Contrast (DSC) imaging, providing measures of cerebral blood flow and volume.
+- **DSC_Source.nii.gz**: This is the source file for Dynamic Susceptibility Contrast (DSC) imaging.
 
 - **DSC_pgui_c_CBV.nii.gz**: This file contains a perfusion map of cerebral blood volume (CBV) derived from DSC imaging.
 
 - **DSC_pgui_oSVD_MTT.nii.gz**: This is a Mean Transit Time (MTT) map, calculated using oscillatory index singular value decomposition (oSVD) from DSC perfusion data.
 
-- **DSC_pgui_oSVD_Tmax.nii.gz**: This file contains a map of the time to the maximum of the residue function (Tmax), derived using oSVD from DSC data.
+- **DSC_pgui_oSVD_Tmax.nii.gz**: This file contains a map of the time to the maximum (Tmax), derived using oSVD from DSC data.
 
 - **DSC_pgui_parametric_CBF.nii.gz**: This file holds a parametrically-derived cerebral blood flow (CBF) map based on DSC perfusion data.
 
 - **DSC_pgui_parametric_CBV.nii.gz**: This is a parametrically-derived cerebral blood volume (CBV) map, derived from DSC perfusion data.
 
-- **DSC_pgui_parametric_MTT.nii.gz**: This file contains a parametrically-derived Mean Transit Time (MTT) map from DSC data.
+- **DSC_pgui_parametric_MTT.nii.gz**: This file contains a parametrically-derived Mean Transit Time (MTT) map from DSC data. 
+ (This was used for the reference test of the validation study mentioned at the beginning of the readme)
 
-- **DSC_pgui_parametric_Tmax.nii.gz**: This is a parametrically-derived time to the maximum of the residue function (Tmax) map from DSC data.
+- **DSC_pgui_parametric_Tmax.nii.gz**: This is a parametrically-derived time to the maximum (Tmax) map from DSC data.
 
 - **DSC_pgui_TPP.nii.gz**: This file contains a Time to Peak (TPP) perfusion map, derived from DSC data.
 
-## Mask Files Descriptions
+### Mask Files Descriptions
 
 - **Masken_cut/ACA_contra_mask.nii.gz**: This is a mask file representing the contralateral Anterior Cerebral Artery (
 
@@ -95,6 +96,63 @@ ACA) territory.
 - **Masken_cut/PCA_contra_mask.nii.gz**: This mask file corresponds to the contralateral Posterior Cerebral Artery (PCA) territory.
 
 - **Masken_cut/PCA_ipsi_mask.nii.gz**: This mask represents the ipsilateral Posterior Cerebral Artery (PCA) territory.
+
+Ipsilateral refers to the arterial flow territories on the side of stenosis
+Contralateral refers to healthy tissue of the arterial flow territories opposite to the side of stenosis 
+
+## Repository Data Structure of statistics.py
+
+The repository nedded for statistics.py is organized according to the output structure of `nipype_pipeline.py`. Here's a snapshot of the data structure:
+
+```
+<Run_Name>
+│
+└───25_DSC_parametric_MTT_reor_coreg_gm_VOI
+│   └───<Subject_ID1>
+│   │   └───_ACA_contra
+│   │   │   │   DSC_pgui_parametric_MTT_reor_coreg.nii.gz
+│   │   └───_ACA_ipsi
+│   │   │   │   DSC_pgui_parametric_MTT_reor_coreg.nii.gz
+│   │   └───_hemi_contra
+│   │   │   │   DSC_pgui_parametric_MTT_reor_coreg.nii.gz
+│   │   └───_hemi_ipsi
+│   │   │   │   DSC_pgui_parametric_MTT_reor_coreg.nii.gz
+│   │   └───_MCA_contra
+│   │   │   │   DSC_pgui_parametric_MTT_reor_coreg.nii.gz
+│   │   └───_MCA_ipsi
+│   │   │   │   DSC_pgui_parametric_MTT_reor_coreg.nii.gz
+│   │   └───_PCA_contra
+│   │   │   │   DSC_pgui_parametric_MTT_reor_coreg.nii.gz
+│   │   └───_PCA_ipsi
+│   │   │   │   DSC_pgui_parametric_MTT_reor_coreg.nii.gz
+│   └───<Subject_ID2>
+│   │   │   ...
+│
+└───<Simulation_Data>
+    │   Side_of_stenosis.csv
+    │   MAP70_MCAonly.csv
+    │   MAP70.csv
+    │   [Additional MAPs]
+```
+
+### Data Files Descriptions
+
+- **25_DSC_parametric_MTT_reor_coreg_gm_VOI/<Subject_ID>/_*_*/DSC_pgui_parametric_MTT_reor_coreg.nii**: These files are the output of the nipype pipeline, specifically the DSC perfusion Mean Transit Time (MTT) maps that have been reoriented and coregistered. Each Subject_ID subdirectory contains separate folders for different vascular territories (ACA, MCA, PCA) and hemispheres (ipsi, contra).
+
+## Simulation Data Files Descriptions
+
+The `<Simulation_Data>` folder contains files associated with the simulation framework as described in Frey et al. (2021). The corresponding paper can be accessed here https://biomedical-engineering-online.biomedcentral.com/articles/10.1186/s12938-021-00880-w
+
+- **Side_of_stenosis.csv**: This file documents the side of stenosis for each patient.
+
+- **MAP70_MCAonly.csv**: This file contains the simulation results for a Mean Arterial Pressure (MAP) of 70mmHg only for MCA areas as can be generated by the simulation framework published by Frey et al (2021)
+
+- **MAP70.csv**: This file contains simulation results for MAP 70mmHg of all territories 
+
+- **[Additional MAPs].csv**: These are simulation results for different MAPs.
+
+---
+
 
 ## Data accessability
 
